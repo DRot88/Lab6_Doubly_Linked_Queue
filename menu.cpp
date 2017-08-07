@@ -34,8 +34,16 @@ void Menu::displayMenu() {
         int value = 0;
         cout << "\n\nPlease enter the integer you would like to add to the Queue: ";
         cin >> value;
-        q1.addBack(value);
-        cin.ignore();
+        while (!cin) {
+          cin.clear();
+          cin.ignore(numeric_limits<streamsize>::max(), '\n');
+          cin >> value;
+        }
+          
+          q1.addBack(value);
+          cin.ignore();
+          cin.clear();
+        
         displayMenu();
         break;
       }
@@ -63,7 +71,7 @@ void Menu::displayMenu() {
         break;
       }
       default : {
-        cout << "\nInvalid choice, please choose from the valid options (1-5)." << endl << endl;
+        cout << "\nInvalid choice, please choose from the valid options." << endl << endl;
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         continue;
