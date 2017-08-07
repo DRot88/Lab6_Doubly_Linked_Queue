@@ -1,5 +1,5 @@
 /****************************************************************
-** Author: Daniel Roteneberg
+** Author: Daniel Rotenberg
 ** Date: 8/6/2017
 ** Description: The main program will display a Menu to the user
                 that has a few options for a Queue. They will
