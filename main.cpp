@@ -1,3 +1,12 @@
+/****************************************************************
+** Author: Daniel Roteneberg
+** Date: 8/6/2017
+** Description: The main program will display a Menu to the user
+                that has a few options for a Queue. They will
+                be able to add, remove, and display items in the
+                queue.
+****************************************************************/
+
 #include <iostream>
 #include "menu.hpp"
 #include "queue.hpp"

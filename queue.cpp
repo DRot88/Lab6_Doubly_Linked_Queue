@@ -22,6 +22,14 @@ Queue::~Queue() {
   }
 }
 
+/****************************************************************
+** Function: addBack(int val)
+** Description: This will take an integer as a parameter and add
+                the integer to the back of the Queue list. The
+                function will also correctly adjust the previous
+                and next pointers for the QueueNode Structure.
+****************************************************************/
+
 void Queue::addBack(int val) {
   QueueNode *newNode = new QueueNode;
   newNode->value = val;
@@ -38,12 +46,12 @@ void Queue::addBack(int val) {
     return;
   }
 
-  QueueNode *last = front->previous; //stores the old final value in list
-  newNode->next = front; // since newNode is now the final, set newNode next to point to front
+  QueueNode *last = front->previous; //stores the old final value in Queue
+  newNode->next = front; // since newNode is now the final, set newNode->next to point to front
   front->previous = newNode; // set front->previous pointing to the new final node in list
   newNode->previous = last; // set new nodes previous pointer to the old value that was the last before this was added
-  last->next = newNode; // set previous last nodes next pointer pointing to new last value
-  back = newNode; // sets the new node to be the last in the list
+  last->next = newNode; // set previous final nodes next pointer pointing to new last value
+  back = newNode; // sets the new node to be the final node in the list
     // cout << "Address of Front: " << front << endl;
     // cout << "Address of New Node: " << newNode << endl;
     // cout << "New Node Previous = " << newNode->previous << endl;
@@ -51,6 +59,11 @@ void Queue::addBack(int val) {
 
   return;
 }
+
+/****************************************************************
+** Function: getFront()
+** Description: This will return the first value in the Queue.
+****************************************************************/
 
 int Queue::getFront() {
   if (front == 0) {
@@ -61,6 +74,13 @@ int Queue::getFront() {
     return front->value;
   }
 }
+
+/****************************************************************
+** Function: removeFront()
+** Description: This will remove the first value in the Queue.
+                To do so, it will reconfigure where the pointers
+                will point to to avoid memory leaks.
+****************************************************************/
 
 void Queue::removeFront() {
   if (front == 0) {
@@ -84,6 +104,12 @@ void Queue::removeFront() {
   }
   return;
 }
+
+/****************************************************************
+** Function: displayQueue()
+** Description: This will print the values in the Queue if there
+                are any.
+****************************************************************/
 
 void Queue::displayQueue() {
   if (front == 0) {
