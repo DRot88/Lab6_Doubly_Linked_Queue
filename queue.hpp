@@ -18,7 +18,7 @@ public:
   void addBack(int val); // puts on item at the end of the queue
   int getFront(); // returns the value at the front of the queue
   void removeFront(); // removes the front item in the structure
-  void getBack();// REMOVE AFTER TESTING
+  void displayQueue(); // displays all of the items in the queue
 };
 
 #endif

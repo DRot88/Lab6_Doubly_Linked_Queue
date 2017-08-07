@@ -31,19 +31,30 @@ void Menu::displayMenu() {
     cin >> choice;    
     switch(choice) {
       case 1 : {
+        int value = 0;
+        cout << "\n\nPlease enter the integer you would like to add to the Queue: ";
+        cin >> value;
+        q1.addBack(value);
         cin.ignore();
+        displayMenu();
         break;
       }
       case 2 : {
+        q1.getFront();
         cin.ignore();
+        displayMenu();
         break;
       }
       case 3 : {
+        q1.removeFront();
         cin.ignore();
+        displayMenu();
         break;
       }
       case 4 : {
+        q1.displayQueue();
         cin.ignore();
+        displayMenu();
         break;
       }
       case 5 : {
@@ -54,7 +65,7 @@ void Menu::displayMenu() {
       default : {
         cout << "\nInvalid choice, please choose from the valid options (1-5)." << endl << endl;
         cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');  
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         continue;
       }
     }
