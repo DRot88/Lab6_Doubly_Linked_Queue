@@ -11,15 +11,21 @@ int main() {
   Queue q1;
 
   cout << endl;
-  q1.addBack(10);
-  q1.addBack(4);
-  q1.addBack(2);    
+  q1.addBack(5);
+  q1.addBack(6);  
+  q1.addBack(10);  
+  q1.addBack(1);  
+  q1.addBack(3);  
+  q1.addBack(1);
+  q1.addBack(0);
   cout << endl;
 
   q1.getBack();
-
   q1.getFront();
+
   q1.removeFront();
+  q1.removeFront();
+  cout << endl;
 
   q1.getFront();
   q1.getBack();
